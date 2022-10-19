@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\86186\Desktop\DQ\traffic design\display\simulation\modelsim
+Edisplay
+Z1 w1606009676
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\86186\Desktop\DQ\traffic design\display\simulation\modelsim
+Z7 8C:/Users/86186/Desktop/DQ/traffic design/display/display.vhd
+Z8 FC:/Users/86186/Desktop/DQ/traffic design/display/display.vhd
+l0
+L4
+VT3jl>lbH37eo739?@HoOc2
+Z9 OV;C;10.1d;51
+31
+Z10 !s108 1637811096.096000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/86186/Desktop/DQ/traffic design/display/display.vhd|
+Z12 !s107 C:/Users/86186/Desktop/DQ/traffic design/display/display.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 ET:iT=;H0Raj15iV76ZMO3
+!i10b 1
+Abehav
+R2
+R3
+R4
+R5
+DEx4 work 7 display 0 22 T3jl>lbH37eo739?@HoOc2
+l10
+L9
+V6M;giiFhPId]ohH2lTDig1
+R9
+31
+R10
+R11
+R12
+R13
+R14
+!s100 >lI[`2b^mDRHK0lMc3Bgo1
+!i10b 1
+Edisplay_vhd_tst
+Z15 w1606738834
+R4
+R5
+R6
+Z16 8C:/Users/86186/Desktop/DQ/traffic design/display/display_vhd_tst.vhd
+Z17 FC:/Users/86186/Desktop/DQ/traffic design/display/display_vhd_tst.vhd
+l0
+L30
+V?DRCU3n4omHPBZCEGahiP1
+!s100 l3zIX`LVW2I?HgRXo?;@M0
+R9
+31
+!i10b 1
+Z18 !s108 1637811096.173000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/86186/Desktop/DQ/traffic design/display/display_vhd_tst.vhd|
+Z20 !s107 C:/Users/86186/Desktop/DQ/traffic design/display/display_vhd_tst.vhd|
+R13
+R14
+Adisplay_arch
+R4
+R5
+DEx4 work 15 display_vhd_tst 0 22 ?DRCU3n4omHPBZCEGahiP1
+l45
+L32
+VSIV2mSJLK@:[e:eH5_D050
+!s100 g3Q2JAn1SV@i:djMAi0<>0
+R9
+31
+!i10b 1
+R18
+R19
+R20
+R13
+R14

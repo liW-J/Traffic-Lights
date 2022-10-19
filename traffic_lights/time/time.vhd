@@ -1,0 +1,79 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+ENTITY time IS
+PORT(  CLK:IN STD_LOGIC;
+RST:IN STD_LOGIC;
+EN:IN STD_LOGIC;
+       S:IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		 NB1,NB2,DX1,DX2:OUT STD_LOGIC_VECTOR(3 DOWNTO 0);--控制数码管显示时间，十进制
+       DX:OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 NB:OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	    );
+ END time;
+ ARCHITECTURE behav OF time IS
+  SIGNAL COUNT: INTEGER RANGE 0 TO 15;
+ SIGNAL DXT:STD_LOGIC_VECTOR(7 DOWNTO 0):=X"01";--东西方向时间，初始值为1
+ SIGNAL NBT:STD_LOGIC_VECTOR(7 DOWNTO 0):=X"01";--南北方向时间，初始值为1,为状态转换做准备
+ SIGNAL ART,AGT,AYT,BRT,BGT,BYT:STD_LOGIC_VECTOR(7 DOWNTO 0);--东西南北红黄绿灯时间信号60S,3S,60S
+	  BEGIN
+	    ART<="01100010";--东西红灯信号63S
+	    AGT<="01011001";--东西绿灯信号60s
+	    AYT<="00000010";--东西黄灯信号3s
+	    BRT<="01100010";--南北红灯信号63s
+	    BGT<="01011001";--南北绿灯信号60s
+	    BYT<="00000010";--南北黄灯信号3s
+       
+		 PROCESS (CLK,RST,EN)
+BEGIN
+    IF RST='0' THEN COUNT<=15;
+	 ELSE IF RST='1' AND EN='0'THEN COUNT<=COUNT;
+    ELSE
+	 IF CLK'EVENT AND CLK='1' THEN
+	 IF COUNT = 0 THEN COUNT<=15;
+	 ELSE COUNT<=COUNT-1;
+	 END IF;
+	 END IF;
+	 END IF;
+	 END IF;
+	 END PROCESS;
+		 
+		 
+		 PROCESS(CLK,S,COUNT)--倒计时模块
+			  BEGIN
+			  IF CLK'EVENT AND CLK='0' AND COUNT=15  THEN
+				 CASE S IS
+				  WHEN "00"=>DXT<=ART;NBT<=BGT;--东西红灯，南北绿
+				  WHEN "01"=>NBT<=BYT;--东西红灯，南北黄
+				  WHEN "10"=>DXT<=AGT;NBT<=BRT;--东西绿灯，南北红
+				  WHEN "11"=>DXT<=AYT;--东西黄灯，南北红
+				  WHEN OTHERS=>NULL;
+				 END CASE;
+				IF DXT/="00000000" THEN
+				  IF DXT(3 DOWNTO 0)="0000" THEN
+				   DXT(3 DOWNTO 0)<="1001";
+				   DXT(7 DOWNTO 4)<=DXT(7 DOWNTO 4)-1;
+				    ELSE DXT(3 DOWNTO 0)<=DXT(3 DOWNTO 0)-1;					      
+				         DXT(7 DOWNTO 4)<=DXT(7 DOWNTO 4);
+				     END IF;
+				 END IF;
+			 IF NBT/="00000000" THEN
+				  IF NBT(3 DOWNTO 0)="0000" THEN
+				   NBT(3 DOWNTO 0)<="1001";
+				   NBT(7 DOWNTO 4)<=NBT(7 DOWNTO 4)-1;
+				    ELSE NBT(3 DOWNTO 0)<=NBT(3 DOWNTO 0)-1;			     
+				       NBT(7 DOWNTO 4)<=NBT(7 DOWNTO 4);
+				    END IF;
+				 END IF;
+				END IF;
+				   DX(3 DOWNTO 0)<=DXT(3 DOWNTO 0);
+				   DX(7 DOWNTO 4)<=DXT(7 DOWNTO 4);
+				   DX2<=DXT(7 DOWNTO 4);
+				   DX1<=DXT(3 DOWNTO 0);
+				   NB(3 DOWNTO 0)<=NBT(3 DOWNTO 0);
+				   NB(7 DOWNTO 4)<=NBT(7 DOWNTO 4);
+				   NB2<=NBT(7 DOWNTO 4);--南北数码管低位输出
+				   NB1<=NBT(3 DOWNTO 0);--南北数码管高位输出
+				  
+				END PROCESS;--倒计时模块结束
+				END behav;

@@ -1,0 +1,355 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
+
+// DATE "11/22/2020 09:48:09"
+
+// 
+// Device: Altera EP3C5F256C6 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module display (
+	S,
+	LIGHTA,
+	LIGHT);
+input 	[1:0] S;
+output 	[5:0] LIGHTA;
+output 	[5:0] LIGHT;
+
+// Design Ports Information
+// LIGHTA[0]	=>  Location: PIN_M6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHTA[1]	=>  Location: PIN_T2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHTA[2]	=>  Location: PIN_T14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHTA[3]	=>  Location: PIN_T5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHTA[4]	=>  Location: PIN_P1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHTA[5]	=>  Location: PIN_T10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHT[0]	=>  Location: PIN_M7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHT[1]	=>  Location: PIN_R4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHT[2]	=>  Location: PIN_N11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHT[3]	=>  Location: PIN_N6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHT[4]	=>  Location: PIN_P2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LIGHT[5]	=>  Location: PIN_R9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S[0]	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S[1]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \LIGHTA[0]~output_o ;
+wire \LIGHTA[1]~output_o ;
+wire \LIGHTA[2]~output_o ;
+wire \LIGHTA[3]~output_o ;
+wire \LIGHTA[4]~output_o ;
+wire \LIGHTA[5]~output_o ;
+wire \LIGHT[0]~output_o ;
+wire \LIGHT[1]~output_o ;
+wire \LIGHT[2]~output_o ;
+wire \LIGHT[3]~output_o ;
+wire \LIGHT[4]~output_o ;
+wire \LIGHT[5]~output_o ;
+wire \S[1]~input_o ;
+wire \S[0]~input_o ;
+wire \Mux3~0_combout ;
+wire \Mux1~0_combout ;
+wire \Mux1~1_combout ;
+wire \Mux1~2_combout ;
+
+
+// Location: IOOBUF_X7_Y0_N9
+cycloneiii_io_obuf \LIGHTA[0]~output (
+	.i(!\Mux3~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHTA[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHTA[0]~output .bus_hold = "false";
+defparam \LIGHTA[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X3_Y0_N2
+cycloneiii_io_obuf \LIGHTA[1]~output (
+	.i(\Mux1~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHTA[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHTA[1]~output .bus_hold = "false";
+defparam \LIGHTA[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y0_N16
+cycloneiii_io_obuf \LIGHTA[2]~output (
+	.i(\S[1]~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHTA[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHTA[2]~output .bus_hold = "false";
+defparam \LIGHTA[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y0_N2
+cycloneiii_io_obuf \LIGHTA[3]~output (
+	.i(\Mux1~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHTA[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHTA[3]~output .bus_hold = "false";
+defparam \LIGHTA[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y4_N23
+cycloneiii_io_obuf \LIGHTA[4]~output (
+	.i(\Mux1~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHTA[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHTA[4]~output .bus_hold = "false";
+defparam \LIGHTA[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X21_Y0_N2
+cycloneiii_io_obuf \LIGHTA[5]~output (
+	.i(!\S[1]~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHTA[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHTA[5]~output .bus_hold = "false";
+defparam \LIGHTA[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y0_N23
+cycloneiii_io_obuf \LIGHT[0]~output (
+	.i(!\Mux3~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHT[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHT[0]~output .bus_hold = "false";
+defparam \LIGHT[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y0_N23
+cycloneiii_io_obuf \LIGHT[1]~output (
+	.i(\Mux1~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHT[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHT[1]~output .bus_hold = "false";
+defparam \LIGHT[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y0_N23
+cycloneiii_io_obuf \LIGHT[2]~output (
+	.i(\S[1]~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHT[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHT[2]~output .bus_hold = "false";
+defparam \LIGHT[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y0_N16
+cycloneiii_io_obuf \LIGHT[3]~output (
+	.i(\Mux1~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHT[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHT[3]~output .bus_hold = "false";
+defparam \LIGHT[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y4_N16
+cycloneiii_io_obuf \LIGHT[4]~output (
+	.i(\Mux1~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHT[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHT[4]~output .bus_hold = "false";
+defparam \LIGHT[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X18_Y0_N23
+cycloneiii_io_obuf \LIGHT[5]~output (
+	.i(!\S[1]~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LIGHT[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LIGHT[5]~output .bus_hold = "false";
+defparam \LIGHT[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X34_Y12_N1
+cycloneiii_io_ibuf \S[1]~input (
+	.i(S[1]),
+	.ibar(gnd),
+	.o(\S[1]~input_o ));
+// synopsys translate_off
+defparam \S[1]~input .bus_hold = "false";
+defparam \S[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X34_Y12_N8
+cycloneiii_io_ibuf \S[0]~input (
+	.i(S[0]),
+	.ibar(gnd),
+	.o(\S[0]~input_o ));
+// synopsys translate_off
+defparam \S[0]~input .bus_hold = "false";
+defparam \S[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X8_Y1_N24
+cycloneiii_lcell_comb \Mux3~0 (
+// Equation(s):
+// \Mux3~0_combout  = (\S[1]~input_o ) # (\S[0]~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\S[1]~input_o ),
+	.datad(\S[0]~input_o ),
+	.cin(gnd),
+	.combout(\Mux3~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Mux3~0 .lut_mask = 16'hFFF0;
+defparam \Mux3~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X8_Y1_N18
+cycloneiii_lcell_comb \Mux1~0 (
+// Equation(s):
+// \Mux1~0_combout  = (!\S[1]~input_o  & \S[0]~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\S[1]~input_o ),
+	.datad(\S[0]~input_o ),
+	.cin(gnd),
+	.combout(\Mux1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Mux1~0 .lut_mask = 16'h0F00;
+defparam \Mux1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X8_Y1_N28
+cycloneiii_lcell_comb \Mux1~1 (
+// Equation(s):
+// \Mux1~1_combout  = (\S[1]~input_o  & !\S[0]~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\S[1]~input_o ),
+	.datad(\S[0]~input_o ),
+	.cin(gnd),
+	.combout(\Mux1~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Mux1~1 .lut_mask = 16'h00F0;
+defparam \Mux1~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X8_Y1_N22
+cycloneiii_lcell_comb \Mux1~2 (
+// Equation(s):
+// \Mux1~2_combout  = (\S[1]~input_o  & \S[0]~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\S[1]~input_o ),
+	.datad(\S[0]~input_o ),
+	.cin(gnd),
+	.combout(\Mux1~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Mux1~2 .lut_mask = 16'hF000;
+defparam \Mux1~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign LIGHTA[0] = \LIGHTA[0]~output_o ;
+
+assign LIGHTA[1] = \LIGHTA[1]~output_o ;
+
+assign LIGHTA[2] = \LIGHTA[2]~output_o ;
+
+assign LIGHTA[3] = \LIGHTA[3]~output_o ;
+
+assign LIGHTA[4] = \LIGHTA[4]~output_o ;
+
+assign LIGHTA[5] = \LIGHTA[5]~output_o ;
+
+assign LIGHT[0] = \LIGHT[0]~output_o ;
+
+assign LIGHT[1] = \LIGHT[1]~output_o ;
+
+assign LIGHT[2] = \LIGHT[2]~output_o ;
+
+assign LIGHT[3] = \LIGHT[3]~output_o ;
+
+assign LIGHT[4] = \LIGHT[4]~output_o ;
+
+assign LIGHT[5] = \LIGHT[5]~output_o ;
+
+endmodule

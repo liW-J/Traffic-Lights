@@ -1,0 +1,315 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "11/30/2020 15:12:07"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    control
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module control_vlg_sample_tst(
+	CLK,
+	DX,
+	EN,
+	NB,
+	RST,
+	sampler_tx
+);
+input  CLK;
+input [7:0] DX;
+input  EN;
+input [7:0] NB;
+input  RST;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(CLK or DX or EN or NB or RST)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module control_vlg_check_tst (
+	Q,
+	sampler_rx
+);
+input [1:0] Q;
+input sampler_rx;
+
+reg [1:0] Q_expected;
+
+reg [1:0] Q_prev;
+
+reg [1:0] Q_expected_prev;
+
+reg [1:0] last_Q_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:1] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 1'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	Q_prev = Q;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	Q_expected_prev = Q_expected;
+end
+
+
+// expected Q[ 1 ]
+initial
+begin
+	Q_expected[1] = 1'bX;
+end 
+// expected Q[ 0 ]
+initial
+begin
+	Q_expected[0] = 1'bX;
+end 
+// generate trigger
+always @(Q_expected or Q)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected Q = %b | ",Q_expected_prev);
+	$display("| real Q = %b | ",Q_prev);
+`endif
+	if (
+		( Q_expected_prev[0] !== 1'bx ) && ( Q_prev[0] !== Q_expected_prev[0] )
+		&& ((Q_expected_prev[0] !== last_Q_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_expected_prev);
+		$display ("     Real value = %b", Q_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_Q_exp[0] = Q_expected_prev[0];
+	end
+	if (
+		( Q_expected_prev[1] !== 1'bx ) && ( Q_prev[1] !== Q_expected_prev[1] )
+		&& ((Q_expected_prev[1] !== last_Q_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_expected_prev);
+		$display ("     Real value = %b", Q_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_Q_exp[1] = Q_expected_prev[1];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#10000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module control_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLK;
+reg [7:0] DX;
+reg EN;
+reg [7:0] NB;
+reg RST;
+// wires                                               
+wire [1:0] Q;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+control i1 (
+// port map - connection between master ports and signals/registers   
+	.CLK(CLK),
+	.DX(DX),
+	.EN(EN),
+	.NB(NB),
+	.Q(Q),
+	.RST(RST)
+);
+
+// CLK
+always
+begin
+	CLK = 1'b0;
+	CLK = #100000 1'b1;
+	#100000;
+end 
+// DX[ 7 ]
+initial
+begin
+	DX[7] = 1'b0;
+end 
+// DX[ 6 ]
+initial
+begin
+	DX[6] = 1'b0;
+end 
+// DX[ 5 ]
+initial
+begin
+	DX[5] = 1'b0;
+end 
+// DX[ 4 ]
+initial
+begin
+	DX[4] = 1'b0;
+end 
+// DX[ 3 ]
+initial
+begin
+	DX[3] = 1'b0;
+end 
+// DX[ 2 ]
+initial
+begin
+	DX[2] = 1'b0;
+end 
+// DX[ 1 ]
+initial
+begin
+	DX[1] = 1'b0;
+end 
+// DX[ 0 ]
+initial
+begin
+	DX[0] = 1'b1;
+end 
+
+// EN
+initial
+begin
+	EN = 1'b1;
+end 
+// NB[ 7 ]
+initial
+begin
+	NB[7] = 1'b0;
+end 
+// NB[ 6 ]
+initial
+begin
+	NB[6] = 1'b0;
+end 
+// NB[ 5 ]
+initial
+begin
+	NB[5] = 1'b0;
+end 
+// NB[ 4 ]
+initial
+begin
+	NB[4] = 1'b0;
+end 
+// NB[ 3 ]
+initial
+begin
+	NB[3] = 1'b0;
+end 
+// NB[ 2 ]
+initial
+begin
+	NB[2] = 1'b0;
+end 
+// NB[ 1 ]
+initial
+begin
+	NB[1] = 1'b0;
+end 
+// NB[ 0 ]
+initial
+begin
+	NB[0] = 1'b0;
+end 
+
+// RST
+initial
+begin
+	RST = 1'b1;
+end 
+
+control_vlg_sample_tst tb_sample (
+	.CLK(CLK),
+	.DX(DX),
+	.EN(EN),
+	.NB(NB),
+	.RST(RST),
+	.sampler_tx(sampler)
+);
+
+control_vlg_check_tst tb_out(
+	.Q(Q),
+	.sampler_rx(sampler)
+);
+endmodule
+

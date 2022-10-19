@@ -1,0 +1,17 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/86186/Desktop/DQ/traffic design/time/time.vhd}
+
+vcom -93 -work work {C:/Users/86186/Desktop/DQ/traffic design/time/time_vhd_tst.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiii -L rtl_work -L work -voptargs="+acc"  time_vhd_tst
+
+add wave *
+view structure
+view signals
+run 150 sec

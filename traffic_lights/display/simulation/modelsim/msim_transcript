@@ -1,0 +1,39 @@
+# Reading D:/Quartus/modelsim_ase/tcl/vsim/pref.tcl 
+# do display_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\Quartus\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\Quartus\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/86186/Desktop/DQ/traffic design/display/display.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity display
+# -- Compiling architecture behav of display
+# 
+# vcom -93 -work work {C:/Users/86186/Desktop/DQ/traffic design/display/display_vhd_tst.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity display_vhd_tst
+# -- Compiling architecture display_arch of display_vhd_tst
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiii -L rtl_work -L work -voptargs="+acc"  display_vhd_tst.vhd
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps display_vhd_tst.vhd 
+# ** Error: (vsim-19) Failed to access library 'display_vhd_tst' at "display_vhd_tst".
+# 
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./display_run_msim_rtl_vhdl.do PAUSED at line 12

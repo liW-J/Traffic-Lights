@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\86186\Desktop\DQ\traffic design\time\simulation\modelsim
+Etime
+Z1 w1606123708
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\86186\Desktop\DQ\traffic design\time\simulation\modelsim
+Z7 8C:/Users/86186/Desktop/DQ/traffic design/time/time.vhd
+Z8 FC:/Users/86186/Desktop/DQ/traffic design/time/time.vhd
+l0
+L4
+VB16Dak^F2P]U?RH_iMfIC3
+Z9 OV;C;10.1d;51
+31
+Z10 !s108 1637808634.517000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/86186/Desktop/DQ/traffic design/time/time.vhd|
+Z12 !s107 C:/Users/86186/Desktop/DQ/traffic design/time/time.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 1?QmAj@<3aIzOaG0:2mJI3
+!i10b 1
+Abehav
+R2
+R3
+R4
+R5
+DEx4 work 4 time 0 22 B16Dak^F2P]U?RH_iMfIC3
+l19
+L14
+V=`[>=zT3?`1ZD8JDGK^h43
+R9
+31
+R10
+R11
+R12
+R13
+R14
+!s100 4PcO[Lfm5<>IFY>GK8Bz53
+!i10b 1
+Etime_vhd_tst
+Z15 w1606728730
+R4
+R5
+R6
+Z16 8C:/Users/86186/Desktop/DQ/traffic design/time/time_vhd_tst.vhd
+Z17 FC:/Users/86186/Desktop/DQ/traffic design/time/time_vhd_tst.vhd
+l0
+L30
+VEhdJL<b;bPIc5?Rz5UkMz2
+!s100 `VV_0V1HYO1eANThYAY501
+R9
+31
+!i10b 1
+Z18 !s108 1637808634.607000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/86186/Desktop/DQ/traffic design/time/time_vhd_tst.vhd|
+Z20 !s107 C:/Users/86186/Desktop/DQ/traffic design/time/time_vhd_tst.vhd|
+R13
+R14
+Atime_arch
+R4
+R5
+DEx4 work 12 time_vhd_tst 0 22 EhdJL<b;bPIc5?Rz5UkMz2
+l60
+L32
+VgY>hVUQ:<I4Pk0[>7FVP70
+!s100 ?SB9jz:W6]ajhNVgo;<XR3
+R9
+31
+!i10b 1
+R18
+R19
+R20
+R13
+R14

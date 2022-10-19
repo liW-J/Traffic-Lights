@@ -1,0 +1,47 @@
+	LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+ENTITY xianshi IS
+PORT(CLK:IN STD_LOGIC;
+     a:IN STD_LOGIC;
+     NBR,NBY,NBG,DXR,DXY,DXG:OUT STD_LOGIC;
+	  LIGHT:OUT STD_LOGIC_VECTOR(5 DOWNTO 0) );--红黄绿灯控制信号
+ END xianshi;			
+ ARCHITECTURE behav OF xianshi IS	
+ SIGNAL S:STD_LOGIC_VECTOR(1 DOWNTO 0):="11";--状态，用于转换红绿黄灯使用 
+ BEGIN
+PROCESS(S)--显示模块
+BEGIN
+  CASE S IS
+  WHEN "00"=>LIGHT<="100001";
+				 DXR<='1';
+				 DXY<='0';
+				 DXG<='0';
+				 NBR<='0';
+				 NBY<='0';
+				 NBG<='1';
+  WHEN "01"=>LIGHT<="100010";
+				 DXR<='1';
+				 DXY<='0';
+				 DXG<='0';
+				 NBR<='0';
+				 NBY<='1';
+				 NBG<='0';
+  WHEN "10"=>LIGHT<="001100";
+				 DXR<='0';
+				 DXY<='0';
+				 DXG<='1';
+				 NBR<='1';
+				 NBY<='0';
+				 NBG<='0';
+  WHEN "11"=>LIGHT<="010100";
+				 DXR<='0';
+				 DXY<='1';
+				 DXG<='0';
+				 NBR<='1';
+				 NBY<='0';
+				 NBG<='0';
+				  WHEN OTHERS=>NULL;
+				 END CASE;
+				  END PROCESS;
+				  END  behav;

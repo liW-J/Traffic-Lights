@@ -1,0 +1,33 @@
+|control
+CLK => COUNT[0].CLK
+CLK => COUNT[1].CLK
+CLK => COUNT[2].CLK
+CLK => COUNT[3].CLK
+CLK => S[0].CLK
+CLK => S[1].CLK
+EN => process_0.IN0
+RST => process_0.IN1
+RST => COUNT[0].PRESET
+RST => COUNT[1].PRESET
+RST => COUNT[2].PRESET
+RST => COUNT[3].PRESET
+DX[0] => Equal2.IN15
+DX[1] => Equal2.IN14
+DX[2] => Equal2.IN13
+DX[3] => Equal2.IN12
+DX[4] => Equal2.IN11
+DX[5] => Equal2.IN10
+DX[6] => Equal2.IN9
+DX[7] => Equal2.IN8
+NB[0] => Equal3.IN15
+NB[1] => Equal3.IN14
+NB[2] => Equal3.IN13
+NB[3] => Equal3.IN12
+NB[4] => Equal3.IN11
+NB[5] => Equal3.IN10
+NB[6] => Equal3.IN9
+NB[7] => Equal3.IN8
+Q[0] <= S[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= S[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

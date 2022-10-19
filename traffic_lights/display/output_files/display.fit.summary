@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Nov 25 11:31:16 2021
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : display
+Top-level Entity Name : display
+Family : Cyclone III
+Device : EP3C5F256C6
+Timing Models : Final
+Total logic elements : 4 / 5,136 ( < 1 % )
+    Total combinational functions : 4 / 5,136 ( < 1 % )
+    Dedicated logic registers : 0 / 5,136 ( 0 % )
+Total registers : 0
+Total pins : 14 / 183 ( 8 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
